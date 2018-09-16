@@ -16,6 +16,8 @@ class Solution(object):
         n = len(prices)
 
         dp = [0 for j in range(n)]
+        # 这个地方cost要为正，因为后面判断条件为price[i] > cost
+        # 如果cost为负的话条件要修改
         cost = prices[0]
         for i in range(1, n):
             if prices[i] > cost:
