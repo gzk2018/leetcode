@@ -34,8 +34,25 @@ class Solution(object):
         # 在找中点的时候，中点前的node并没有指向空，而是指向他最后应该指向的node，
         # 所以while条件为cur2.next
         cur1, cur2 = odd, pre
-        while cur2.next:
+        while cur2:
             after1, after2 = cur1.next, cur2.next
             cur1.next = cur2
             cur2.next = after1
             cur1, cur2 = after1, after2
+
+def disp(node):
+    res = []
+    while node:
+        res.append(node.val)
+        node = node.next
+    print(res)
+    return res
+
+a,b,c,d = ListNode(1), ListNode(2), ListNode(3), ListNode(4)
+a.next = b
+b.next = c
+c.next = d
+
+s = Solution()
+res = s.reorderList(a)
+disp(res)

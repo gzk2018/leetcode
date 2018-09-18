@@ -1,3 +1,5 @@
+# 和第81题不一样
+
 class Solution(object):
     def findMin(self, nums):
         """
